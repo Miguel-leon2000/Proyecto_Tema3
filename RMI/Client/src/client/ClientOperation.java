@@ -1,5 +1,7 @@
 package client;
 
+
+import model.Contact;
 import rmiinterface.RMIInterface;
 
 import javax.swing.*;
@@ -16,10 +18,10 @@ public class ClientOperation {
             throws MalformedURLException, RemoteException, NotBoundException {
 
         look_up = (RMIInterface) Naming.lookup("//localhost/MyServer");
-        String txt = JOptionPane.showInputDialog("What is your name?");
+        //String txt = JOptionPane.showInputDialog("What is your name?");
 
-        String response = look_up.helloTo(txt);
-        JOptionPane.showMessageDialog(null, response);
+        Contact response = look_up.getContact();
+        JOptionPane.showMessageDialog(null, response.getName() + " " + response.getTelefone());
 
     }
 
