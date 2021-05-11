@@ -17,7 +17,7 @@ public class ClientOperation {
     public static void main(String[] args)
             throws MalformedURLException, RemoteException, NotBoundException {
 
-        look_up = (RMIInterface) Naming.lookup("//localhost/MyServer");
+        look_up = (RMIInterface) Naming.lookup("//85.187.158.121:1099/MyServer");
         //String txt = JOptionPane.showInputDialog("What is your name?");
 
         Contact response = look_up.getContact();
